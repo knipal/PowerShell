@@ -112,3 +112,10 @@ $objUser.Value
 
 # Write Random
 1..1024 | % {$rand=[byte[]]::new(1GB); [Random]::new().NextBytes($rand); [IO.File]::WriteAllBytes("D:\filez$_.bin",$rand)}
+
+
+# grep
+cat C:\temp\file.txt |
+    Where-Object {$_ -notmatch "^\s*$"} |   # no whitespace
+    Where-Object {$_ -Like  "*this*"} |     # include
+    Where-Object {$_ -NotLike  "*that*"}    # exclude
