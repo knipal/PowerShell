@@ -8,9 +8,9 @@ while (1) {
     Write-Host ("{0} - " -f $(Get-Date -Format "HH:mm:ss")) -NoNewline
 
     if ($pingResult) {
-        Write-Host "Online" -BackgroundColor Green
+        Write-Host " Online " -BackgroundColor Green
     } else {
-        Write-Host "Online" -BackgroundColor Red
+        Write-Host " Offline " -BackgroundColor Red
     }
 
     sleep 1
